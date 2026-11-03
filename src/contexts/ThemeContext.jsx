@@ -15,15 +15,14 @@ export function ThemeProvider({ children }){
         <ThemeContext.Provider value={{ tema, alternarTema }}>
             { children }
         </ThemeContext.Provider>
-    );
+    );    
 
-    export function useTheme(){
+};
+
+   export function useTheme(){
         const context = useContext(ThemeContext);
         if(!context){
             throw new Error('UseTheme deve ser usado de um ThemeProvider')
         }
+        return context;
     };
-        
-    
-
-};
